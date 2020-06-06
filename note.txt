@@ -1,0 +1,16 @@
+day 1 --------
+   day_1.cpp
+
+   -> scanf, prinf
+   ->cin.ignore(limitnumeric)
+    so sanh scanf --- cin 
+
+    cin.ignore(numeric_limits<streamsize>::max(), 'd');
+
+day 2 ----------------------
+   auto variblle =...... 
+     giống var trong js
+
+
+
+   
