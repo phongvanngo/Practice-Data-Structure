@@ -6,11 +6,11 @@ int *Arr;
 
 void BubbleSort(int a[], int left, int right)
 {
-    for (int i = left; i <= right - 1; i++)
+    for (int i = right; i > 0; i--)
     {
-        for (int j = i + 1; j <= right; j++)
+        for (int j = 0; j < i; j++)
         {
-            if (a[j] < a[i])
+            if (a[j] > a[i])
             {
                 //swap
                 int temp = a[i];

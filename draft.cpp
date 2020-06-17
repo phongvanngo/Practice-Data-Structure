@@ -2,18 +2,27 @@
 
 #include <stdio.h>
 
-#ifndef IOS
-#define IOS
 #include <iostream>
-#endif
+using namespace std;
+
+void swap(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
 
 int main()
 {
-#ifdef UNIX
-    printf("UNIX specific function calls go here.\n");
-#endif
-
-    printf("TechOnTheNet is over 10 years old.\n");
-    cout << "jeloo";
-    return 0;
+    int n;
+    cin >> n;
+    int *a = new int[n];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    for (int i = n; i > 1; i--)
+        for (int j = 0; j < i - 1; j++)
+            if (a[j + 1] < a[j])
+                swap(a[j + 1], a[j]);
+    for (int i = 0; i < n; i++)
+        cout << a[i] << " ";
 }
