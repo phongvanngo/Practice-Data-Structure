@@ -16,8 +16,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "C:\\Users\\19520\\Documents\\CODE\\CODING\\DRAFT\\Demo Hackerrank Practice\\Program\\${fileBasenameNoExtension}.exe",
-                //"${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\Program\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "C:\\MinGW\\bin"
@@ -28,8 +27,7 @@
         },
         {
             "label": "Run",
-            "command": "C:\\Users\\19520\\Documents\\CODE\\CODING\\DRAFT\\Demo Hackerrank Practice\\Program\\${fileBasenameNoExtension}.exe",
-            // "command":"${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "command": "${workspaceFolder}\\Program\\${fileBasenameNoExtension}.exe",
             "dependsOn": ["Compile C++"],
             "group": {
                 "kind": "build",
@@ -39,8 +37,7 @@
         {
             "taskName": "RunActiveProgram",
             "label": "RunActiveProgram",
-            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "command": "C:\\Users\\19520\\Documents\\CODE\\CODING\\DRAFT\\Demo Hackerrank Practice\\Program\\${fileBasenameNoExtension}.exe",
+            "command": "${workspaceFolder}\\Program\\${fileBasenameNoExtension}.exe",
         }
     ]
 }
