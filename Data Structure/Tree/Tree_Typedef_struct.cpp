@@ -185,7 +185,7 @@ int main()
     TREE BinaryTree = NULL;
     const int a[10] = {7, 8, 5, 12, 6, 15, 14, 16, 11, 4};
     for (int i = 0; i < 10; i++)
-        InsertNode(BinaryTree, a[i]);
+        InsertNode2(BinaryTree, a[i]);
 
     PrintInOrder(BinaryTree);
     cout << endl;
