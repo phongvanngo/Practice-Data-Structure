@@ -29,6 +29,38 @@ void InsertNode(TREE &root, int _data)
         InsertNode(root->left, _data);
 };
 
+void InsertNode2(TREE &Root, int _data)
+{
+    if (Root == NULL)
+    {
+        Root = new Node(_data);
+        return;
+    };
+
+    TREE p = Root;
+
+    while (p)
+    {
+        if (_data > p->data)
+            if (p->right == NULL)
+            {
+                p->right = new Node(_data);
+                return;
+            }
+            else
+                p = p->right;
+
+        if (_data < p->data)
+            if (p->left == NULL)
+            {
+                p->left = new Node(_data);
+                return;
+            }
+            else
+                p = p->left;
+    }
+}
+
 //-----------------------------------------------
 
 void InsertSubTree(TREE &root, TREE SubTree)
@@ -82,36 +114,41 @@ int DataReplace(TREE &root)
     return -1;
 };
 
-int DeleteNodeInTree(TREE &root, int _data) {
-    if (_data == root->data) {
+int DeleteNodeInTree(TREE &root, int _data)
+{
+    if (_data == root->data)
+    {
         TREE temp = root;
-        if (root->left == NULL && root->right == NULL) {
+        if (root->left == NULL && root->right == NULL)
+        {
             delete root;
             root = NULL;
             return 1;
         };
-        if (root->left != NULL && root->right == NULL) {
+        if (root->left != NULL && root->right == NULL)
+        {
             root = root->left;
             delete temp;
             temp = NULL;
-            return 1;           
+            return 1;
         };
-        if (root->right != NULL && root->left == NULL) {
+        if (root->right != NULL && root->left == NULL)
+        {
             root = root->right;
             delete temp;
-            temp = NULL;  
-            return 1;         
+            temp = NULL;
+            return 1;
         };
         root->data = DataReplace(root->left);
         return 1;
     };
 
-    if (_data > root->data) return DeleteNodeInTree(root->right,_data); 
-    if (_data < root->data) return DeleteNodeInTree(root->left,_data);
+    if (_data > root->data)
+        return DeleteNodeInTree(root->right, _data);
+    if (_data < root->data)
+        return DeleteNodeInTree(root->left, _data);
 
-    return -1; 
-
-
+    return -1;
 }
 
 //-----------------------------------------------
@@ -149,19 +186,20 @@ int main()
     const int a[10] = {7, 8, 5, 12, 6, 15, 14, 16, 11, 4};
     for (int i = 0; i < 10; i++)
         InsertNode(BinaryTree, a[i]);
-    PrintInOrder(BinaryTree);
-    cout << endl;
-    PrintPreOrder(BinaryTree);
-    cout << endl;
-    PrintPostOrder(BinaryTree);
-    cout << endl;
-    cout << endl;
-
-    DeleteNodeInTree(BinaryTree, 7);
 
     PrintInOrder(BinaryTree);
     cout << endl;
-    PrintPreOrder(BinaryTree);
-    cout << endl;
-    PrintPostOrder(BinaryTree);
+    // PrintPreOrder(BinaryTree);
+    // cout << endl;
+    // PrintPostOrder(BinaryTree);
+    // cout << endl;
+    // cout << endl;
+
+    // DeleteNodeInTree(BinaryTree, 7);
+
+    // PrintInOrder(BinaryTree);
+    // cout << endl;
+    // PrintPreOrder(BinaryTree);
+    // cout << endl;
+    // PrintPostOrder(BinaryTree);
 }
